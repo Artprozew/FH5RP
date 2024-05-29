@@ -8,6 +8,11 @@ using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.SignalR;
 
+
+// TODO: Make it open/close with the game and a tray icon?
+// TODO: Make the RPC a little nicer?
+// TODO: Make idling/unfocused status?
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

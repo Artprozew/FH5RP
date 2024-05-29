@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Timers;
 using FH5RP.Data;
 using Timer = System.Timers.Timer;
+using System.Diagnostics;
 
 namespace FH5RP.Net
 {
@@ -40,9 +41,10 @@ namespace FH5RP.Net
             }
 
             RPC.Initialize();
+            Process[] process = Process.GetProcessesByName("ForzaHorizon5");
 
             Timer t = new Timer(1250);
-            t.Elapsed += (s, a) => { RPC.UpdatePresence(LastUpdate); };
+            t.Elapsed += (s, a) => { RPC.UpdatePresence(LastUpdate, process); };
             t.Start();
         }
 
